@@ -1,0 +1,61 @@
+/* Estilos globais para o layout */
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  margin-left: 280px; /* Igual à largura do menu */
+  transition: margin 0.3s ease;
+}
+
+/* Ajustes para mobile */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    padding: 1rem;
+    padding-top: 5rem; /* Espaço para o botão do menu mobile */
+  }
+}
+
+/* Estilos para o dark mode global */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode .main-content {
+  background-color: #1e1e1e;
+}
+
+.carregando {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 1000;
+}
+
+.dark .carregando {
+  background: rgba(30, 30, 30, 0.9);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: #3498db;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
